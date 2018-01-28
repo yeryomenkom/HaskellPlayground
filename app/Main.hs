@@ -1,6 +1,7 @@
 module Main where
 
 import Lib
+import Homeworks
 
 main :: IO ()
-main = someFunc
+main = print (perfects 1000)
