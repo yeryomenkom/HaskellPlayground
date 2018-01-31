@@ -2,7 +2,9 @@
 module Homeworks(
         pyths,
         factors,
-        perfects
+        perfects,
+        myMap,
+        myFilter
        ) where
 
 --Lecture 5
@@ -14,3 +16,11 @@ factors a = [x | x <- [1..a], mod a x == 0]
 
 perfects :: Int -> [Int]
 perfects n = [x | x <- [1..n], sum (factors x) == x*2]
+
+--Lecture 7
+
+myMap :: (a -> b) -> [a] -> [b]
+myMap f = foldr (\x z -> (f x) : z) []
+
+myFilter :: (a -> Bool) -> [a] -> [a]
+myFilter p = foldr (\a acc -> if p a then a:acc else acc) []

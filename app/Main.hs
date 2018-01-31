@@ -4,4 +4,4 @@ import Lib
 import Homeworks
 
 main :: IO ()
-main = print (perfects 1000)
+main = print (myFilter even (myMap (+1) [1,2,3,4]))
